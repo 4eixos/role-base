@@ -1,4 +1,5 @@
 - name: Made a temp global file with all keys
+  become: false
   local_action: 
     module: ansible.builtin.lineinfile 
     line: "{{ lookup('file', item) }}"
@@ -15,6 +16,7 @@
     exclusive: yes
 
 - name: Delete the temp global file with all keys
+  become: false
   local_action: 
     module: file
     state: absent
