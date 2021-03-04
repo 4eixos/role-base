@@ -31,7 +31,10 @@ ansible-galaxy install -r requirements.yml -p roles/
 
 Role Variables
 --------------
-
+public_keys_path: path for public keys. Default: public_keys
+public_all_filekeys_path: temporary path for work with public keys. Default : /tmp/all_public_keys
+sshlog_enable: for enable sshlog . Default: 0
+authorized_key_exclusive: exclusive public keys of publick_keys_path. Default: yes
 
 Dependencies
 ------------
