@@ -13,7 +13,7 @@
     user: "{{ansible_user}}"
     key: "{{ lookup('file', public_all_filekeys_path) }}"
     state: present
-    exclusive: yes
+    exclusive: "{{authorized_key_exclusive}}"
 
 - name: Delete the temp global file with all keys
   become: false

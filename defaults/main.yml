@@ -4,3 +4,4 @@
 public_keys_path: public_keys
 public_all_filekeys_path: /tmp/all_public_keys
 sshlog_enable: 0
+authorized_key_exclusive: yes
