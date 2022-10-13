@@ -1,5 +1,5 @@
 - name: Copy current packer ssh key
-  shell: cp /home/ubuntu/.ssh/authorized_keys /home/ubuntu/.ssh/authorized_keys.old
+  shell: cp /home/ubuntu/.ssh/authorized_keys /tmp/authorized_keys
 
 - name: Made a temp global file with all keys
   become: false
@@ -26,7 +26,4 @@
     path: "{{ public_all_filekeys_path }}"
 
 - name: Insert ssh key packer into authorized_keys file
-  shell: cat /home/ubuntu/.ssh/authorized_keys.old >> /home/ubuntu/.ssh/authorized_keys
-
-- name: Delete ssh key packer file
-  shell: rm /home/ubuntu/.ssh/authorized_keys.old
+  shell: cat /tmp/authorized_keys >> /home/ubuntu/.ssh/authorized_keys
